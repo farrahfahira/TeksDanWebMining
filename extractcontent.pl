@@ -54,6 +54,11 @@ foreach my $file (@files) {
 sub extract_content {
     my $html = shift;
 
+    # remove text inside <div class="photo__caption"></div>, <strong></strong>, and <i></i>
+    $html =~ s/<div class="photo__caption">.*?<\/div>//g;
+    $html =~ s/<strong>.*?<\/strong>//g;
+    $html =~ s/<i>.*?<\/i>//g;
+
     my $extractor = HTML::ExtractContent->new;
     $extractor->extract($html);
     my $content = $extractor->as_text;
@@ -62,11 +67,12 @@ sub extract_content {
     return $content;
 }
 
+
 sub split_content {
     my $content = shift;
     print $content;
 
-    my @sentences = split /[.?!]/, $content; # Split content by sentences
+    my @sentences = split /([.?!])\s*/, $content;
     my $num_sentences = scalar @sentences;
 
     my $num_top = int($num_sentences/3);
@@ -80,14 +86,20 @@ sub split_content {
     return ($top, $middle, $bottom);
 }
 
+
 sub clean_str {
     my $str = shift;
     $str =~ s/>//g;
     $str =~ s/&.*?;//g;
-    #$str =~ s/[\:\]\|\[\?\!\@\#\$\%\*\&\,\/\\\(\)\;"]+//g;
     $str =~ s/[\]\|\[\@\#\$\%\*\&\\\(\)\"]+//g;
+    $str =~ s/-/ /g;
+    $str =~ s/\n+//g;
     $str =~ s/\s+/ /g;
-    $str =~ s/^\s+|\s+$//g;
+    $str =~ s/^\s+//g;
+    $str =~ s/\s+$//g;
+    $str =~ s/^$//g;
+    $str =~ s/-&nbsp;//g;
+
 
     return $str;
 }
