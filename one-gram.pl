@@ -1,12 +1,10 @@
-use lib '../lib';
 use Lingua::EN::Bigram;
 use strict;
 
 my $PATH = "kamus/tren";
-open TOFILE, "> $PATH/1-gram.txt" or die "cant open file!!!";
+open TOFILE, "> $PATH/unigram.txt" or die "cant open file!!!";
 
 my %stopwords;
-
 load_stopwords(\%stopwords);
 
 # ambil daftar file dari direktori yang diinginkan
@@ -15,38 +13,61 @@ opendir(DIR, $dir) or die "Can't open directory: $!\n";
 my @files = grep { /\.dat$/ } readdir(DIR);
 closedir(DIR);
 
-my $index = 0;
+# inisialisasi variabel text
+my $text = '';
 
 # proses setiap file secara terpisah
 foreach my $file (@files) {
   open F, "$dir/$file" or die "Can't open input: $!\n";
-  my $text = do { local $/; <F> };
+  my $file_text = do { local $/; <F> };
   close F;
 
   # menghilangkan tag html
-  $text =~ s/<[^>]+>//g;
+  $file_text =~ s/<[^>]+>//g;
 
-  # build n-grams
-  my $ngrams = Lingua::EN::Bigram->new;
-  $ngrams->text( $text );
+  # gabungkan file_text ke variabel $text
+  $text .= $file_text;
 
-  # get bi-gram counts
-  my $onegram_count = $ngrams->onegram_count;
+}
 
-  foreach my $onegram (keys %$onegram_count ) {
+# build n-grams
+my $ngrams = Lingua::EN::Bigram->new;
+$ngrams->text( $text );
 
-    # get the tokens of the bigram
-    my ( $first_token ) = $onegram;
+# get uni-gram counts
+my $unigram_count = $ngrams->unigram_count;
 
-    # skip stopwords and punctuation
-    next if ( $stopwords{ $first_token } );
-    next if ( $first_token =~ /[,.?!:;()\-]/ );
+my %unigram_freq;
+my $total_unigrams = 0;
 
-    $index++;
+foreach my $unigram (keys %$unigram_count) {
 
-    print TOFILE "$$onegram_count{ $onegram }\t$onegram\n";
+  # get the tokens of the uni-gram
+  my ($first_token) = $unigram;
 
-  }
+  # skip punctuation
+  next if ( $first_token =~ /[,.?!:;()\-]/ );
+  # skip stopwords;
+  next if ( $stopwords{ $first_token } );
+
+  # accumulate the count of non-stopword unigrams
+  $total_unigrams += $$unigram_count{ $unigram };
+
+  # save the count of each unigram
+  $unigram_freq{ $unigram } = $$unigram_count{ $unigram };
+
+}
+
+foreach my $unigram (sort{ $unigram_freq{ $b } <=> $unigram_freq{ $a } } keys %unigram_freq) {
+
+  # get the tokens of the uni-gram
+  my ($first_token) = $unigram;
+
+  # calculate the normalized frequency
+  my $freq_norm = $unigram_freq{ $unigram } / $total_unigrams;
+
+  print TOFILE "$unigram_freq{ $unigram }\t$freq_norm\t$unigram\n";
+
 }
 
 sub load_stopwords 

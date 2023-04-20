@@ -1,12 +1,10 @@
-use lib '../lib';
 use Lingua::EN::Bigram;
 use strict;
 
 my $PATH = "kamus/tren";
-open TOFILE, "> $PATH/2-grams.txt" or die "cant open file!!!";
+open TOFILE, "> $PATH/bigram.txt" or die "cant open file!!!";
 
 my %stopwords;
-
 load_stopwords(\%stopwords);
 
 # ambil daftar file dari direktori yang diinginkan
@@ -15,40 +13,62 @@ opendir(DIR, $dir) or die "Can't open directory: $!\n";
 my @files = grep { /\.dat$/ } readdir(DIR);
 closedir(DIR);
 
-my $index = 0;
+# inisialisasi variabel text
+my $text = '';
 
 # proses setiap file secara terpisah
 foreach my $file (@files) {
   open F, "$dir/$file" or die "Can't open input: $!\n";
-  my $text = do { local $/; <F> };
+  my $file_text = do { local $/; <F> };
   close F;
 
   # menghilangkan tag html
-  $text =~ s/<[^>]+>//g;
+  $file_text =~ s/<[^>]+>//g;
 
-  # build n-grams
-  my $ngrams = Lingua::EN::Bigram->new;
-  $ngrams->text( $text );
+  # gabungkan file_text ke variabel $text
+  $text .= $file_text;
 
-  # get bi-gram counts
-  my $bigram_count = $ngrams->bigram_count;
+}
 
-  foreach my $bigram (keys %$bigram_count ) {
+# build n-grams
+my $ngrams = Lingua::EN::Bigram->new;
+$ngrams->text( $text );
 
-    # get the tokens of the bigram
-    my ( $first_token, $second_token ) = split / /, $bigram;
+# get bigram counts
+my $bigram_count = $ngrams->bigram_count;
 
-    # skip stopwords and punctuation
-    next if ( $stopwords{ $first_token } );
-    next if ( $first_token =~ /[,.?!:;()\-]/ );
-    next if ( $stopwords{ $second_token } );
-    next if ( $second_token =~ /[,.?!:;()\-]/ );
+my %bigram_freq;
+my $total_bigrams = 0;
 
-    $index++;
+foreach my $bigram (keys %$bigram_count) {
 
-    print TOFILE "$$bigram_count{ $bigram }\t$bigram\n";
+  # get the tokens of the bigram
+  my ( $first_token, $second_token ) = split / /, $bigram;
 
-  }
+  # skip stopwords and punctuation
+  next if ( $stopwords{ $first_token } );
+  next if ( $first_token =~ /[,.?!:;()\-]/ );
+  next if ( $stopwords{ $second_token } );
+  next if ( $second_token =~ /[,.?!:;()\-]/ );
+
+  # accumulate the count of non-stopword bigrams
+  $total_bigrams += $$bigram_count{ $bigram };
+
+  # save the count of each bigram
+  $bigram_freq{ $bigram } = $$bigram_count{ $bigram };
+
+}
+
+foreach my $bigram (sort{ $bigram_freq{ $b } <=> $bigram_freq{ $a } } keys %bigram_freq) {
+
+  # get the tokens of the bigram
+  my ( $first_token, $second_token ) = split / /, $bigram;
+
+  # calculate the normalized frequency
+  my $freq_norm = $bigram_freq{ $bigram } / $total_bigrams;
+
+  print TOFILE "$bigram_freq{ $bigram }\t$freq_norm\t$bigram\n";
+
 }
 
 sub load_stopwords 
