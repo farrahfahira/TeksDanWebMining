@@ -54,7 +54,7 @@ foreach my $trigram (keys %$trigram_count) {
   next if ( $stopwords{ $second_token } );
   next if ( $stopwords{ $third_token } );;
 
-  # accumulate the count of non-stopword trigrams
+  # accumulate the count of total trigrams
   $total_trigrams += $$trigram_count{ $trigram };
 
   # save the count of each trigram

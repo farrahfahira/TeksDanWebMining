@@ -51,7 +51,7 @@ foreach my $bigram (keys %$bigram_count) {
   next if ( $stopwords{ $second_token } );
   next if ( $second_token =~ /[,.?!:;()\-]/ );
 
-  # accumulate the count of non-stopword bigrams
+  # accumulate the count of total bigrams
   $total_bigrams += $$bigram_count{ $bigram };
 
   # save the count of each bigram

@@ -50,7 +50,7 @@ foreach my $unigram (keys %$unigram_count) {
   # skip stopwords;
   next if ( $stopwords{ $first_token } );
 
-  # accumulate the count of non-stopword unigrams
+  # accumulate the count of total unigrams
   $total_unigrams += $$unigram_count{ $unigram };
 
   # save the count of each unigram
