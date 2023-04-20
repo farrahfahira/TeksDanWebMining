@@ -22,8 +22,10 @@ foreach my $file (@files) {
   my $file_text = do { local $/; <F> };
   close F;
 
-  # menghilangkan tag html
-  $file_text =~ s/<[^>]+>//g;
+  # preprocessing
+  $file_text =~ s/<[^>]+>//g; #hapus tag html
+  $file_text =~ s/' \b|\b '//g; #hapus spasi sesudah dan sesbelum tanda petik
+  $file_text =~ s/'\b|\b'//g; #hapus tanda petik di awal atau akhir kata, tapi tidak tengah kata
 
   # gabungkan file_text ke variabel $text
   $text .= $file_text;
