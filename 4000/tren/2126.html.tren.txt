@@ -1,0 +1,6 @@
+<title>Uber Diduga Diretas oleh Hacker 18 Tahun, Bagaimana Data Pelanggan?</title>
+<first>Layanan transportasi online Uber menemukan jaringan komputernya telah diretas oleh seorang hacker pada 15 September 2022.Hal tersebut membuat perusahaan itu menghentikan beberapa komunikasi internal dan sistem rekayasanya saat menyelidiki tingkat peretasan</first>
+<second>.Diberitakan New York Times, 15 September 2022, pelanggaran itu tampaknya telah membahayakan banyak sistem internal Uber.</second>
+<third>Seseorang yang mengaku bertanggung jawab atas peretasan itu mengirim gambar email, penyimpanan cloud, dan repositori kode ke peneliti keamanan siber dan The New York Times.“Mereka cukup banyak memiliki akses penuh ke Uber,” kata Sam Curry, seorang insinyur keamanan di Yuga Labs</third>
+<fourth>.Seorang juru bicara Uber mengatakan perusahaan sedang menyelidiki pelanggaran tersebut dan menghubungi petugas penegak hukum.</fourth>
+<fifth>Karyawan Uber diinstruksikan untuk tidak menggunakan layanan pesan internal perusahaan Slack.Sesaat sebelum sistem Slack offline pada Kamis sore, karyawan Uber menerima pesan yang berbunyi,Saya mengumumkan bahwa saya adalah seorang peretas dan Uber telah mengalami pelanggaran data.Pesan itu juga memuat daftar database internal yang diklaim peretas telah disusupi.</fifth>

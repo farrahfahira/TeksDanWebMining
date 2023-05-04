@@ -1,0 +1,6 @@
+<title>5 Rumus Dasar Excel yang Harus Diketahui agar Mudah Menggunakan Excel</title>
+<first>Microsoft Excel merupakan salah satu software komputer yang banyak digunakan untuk membuat laporan pekerjaan.Menggunakan Excel , Anda bisa melakukan berbagai perhitungan matetmatika dengan cukup mudah dan cepat karena berbagai rumus yang telah disediakan</first>
+<second>.Selain itu, Excel juga memiliki beragam fitur, seperti grafik dan tabel yang akan membuat laporan lebih mudah dipahami.</second>
+<third>Selama menggunakan Excel, mungkin Anda akan sering berurusan dengan berbagai perhitungan, sehingga penting untuk mengetahui berbagai rumus yang ada di Excel.Berikut beberapa rumus dasar Excel yang bisa memudahkan pekerjaan Anda:1</third>
+<fourth>.SUMDikutip dari laman Microsoft , fungsi “SUM” digunakan untuk menambahkan nilai.</fourth>
+<fifth>Menggunakan fungsi ini maka Anda bisa menambah nilai individual, refrensi sel, rentang maupun campuran dari ketiganya.Sebagai contoh penggunaan dari fungsi SUM yakni sebagai berikut:=SUMA2:A5 arti rumus tersebut yakni menambahkan nilai sel A2 hingga A5=SUMA2:A10, C2:C10 arti dari rumus tersebut yakni menambahkan nilai dalam sel A2 hinggga A10 dengan sel C2 hingga C10.2.Average</fifth>

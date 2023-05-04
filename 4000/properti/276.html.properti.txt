@@ -1,0 +1,6 @@
+<title>Hitung Ulang Kebutuhan AC di Rumah supaya Tidak Boros, Begini Caranya</title>
+<first>Saat pertama kali ingin membeli AC atau pengatur suhu udara, besarnya biaya listrik pasti menjadi pertimbangan utama.Listrik AC jelas lebih besar dibandingkan dengan kipas angin.</first>
+<second>Meski AC jauh lebih efektif untuk membuat ruangan menjadi sejuk dan dingin.Karena itu, sebelum memutuskan untuk membeli AC, ada baiknya menghitung berapa Paard Kracht PK yang dibutuhkan untuk sebuah ruangan.</second>
+<third>PK ini merupakan nama lain dari horsepower atau tenaga dari AC yang Anda gunakan.Semakin besar PK jelas semakin besar pula beban listrik yang dipakai.</third>
+<fourth>Berikut cara menghitung kebutuhan AC sebuah ruangan:Arsitek Ogie Hartantyo membagikan tips dan cara sedehana mengukur kebutuhan PK AC di rumah.Hal pertama yang mesti dilakukan adalah menghitung luas bangunan rumah Anda untuk mengetahui berapa besar British Thermal Unit BTU atau daya pendingin AC, daya listrik dan PK Kompressor AC yang dibutuhkan.</fourth>
+<fifth>Sebagai contoh sebuah ruangan mezzanine berukuran dua lantai dengan luas bangunan 4 x 5 meter persegi.Dibutuhkan 500 BTU per hour BTU/h untuk setiap satu meter perseginya.Dengan rumus BTU = 4 x 5 x 2 x 500, maka hasil yang didapat adalah 20.000 BTU.</fifth>

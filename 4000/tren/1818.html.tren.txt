@@ -1,0 +1,6 @@
+<title>Mengenal Apa Itu Flightradar24, Aplikasi Pelacak Penerbangan Real Time</title>
+<first>  Flightradar24 adalah salah satu layanan untuk memantau dan melacak informasi penerbangan pesawat terbang secara real time.Informasi penerbangan meliputi dari jalur penerbangan, asal dan tujuan penerbangan, nomor penerbangan, jenis, posisi, ketinggian, arah, hingga kecepatan pesawat.</first>
+<second>Layanan yang berbasis aplikasi dan website ini kerap digunakan oleh masyarakat untuk mengetahui informasi suatu penerbangan pesawat secara online.Apa itu Flightradar24 ?</second>
+<third>Mengenal Flightradar24Dikutip dari laman resminya , Flightradar24 adalah layanan pelacakan penerbangan global yang memberikan informasi secara realtime  ribuan pesawat di dunia.Flightradar 24 tersedia dalam aplikasi yang bisa diunduh baik untuk perangkat iOS maupun Android.</third>
+<fourth>Flightradar24 dibangun pada 2006 oleh dua pakar penerbangan Swedia yang memutuskan untuk membangun jaringan penerima ADS B di Eropa Utara dan Tengah.Pada 2009, jaringan disediakan secara terbuka yang memungkinkan siapa saja yang memiliki receiver ADS B mengunggah data ke jaringan.</fourth>
+<fifth>Sejauh ini, jangkauan Flightradar24 telah meluas.Upaya memperluas cakupan secara global pun masih terus berlangsung.</fifth>

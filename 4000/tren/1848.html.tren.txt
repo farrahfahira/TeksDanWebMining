@@ -1,0 +1,6 @@
+<title>Cara Menghapus Akun Google</title>
+<first>Pihak Google memberikan penjelasan mengenai langkah atau cara menghapus akun Google .Dilansir dari laman support.</first>
+<second>google.com , dijelaskan bahwa Anda dapat menghapus akun Google kapan saja.</second>
+<third>Namun sebelum Anda benar benar menghapus akun Google, ada beberapa hal yang perlu diketahui.Pertama, Anda akan kehilangan semua data dan konten di akun tersebut, seperti email, file, hingga foto.</third>
+<fourth>Kemudian, Anda tidak akan bisa menggunakan sejumlah layanan Google seperti Gmail, Google Drive, dan Google Play.Anda juga akan kehilangan akses langganan dan konten yang dibeli dengan akun tersebut di YouTube atau Google Play, seperti aplikasi, film, game , musik, dan acara TV.</fourth>
+<fifth>Namun, jika Anda memiliki lebih dari satu akun Google, menghapus satu akun tidak akan menghilangkan akun yang lainnya.Cara menghapus akun GoogleBerikut langkah langkah menghapus akun Google:Buka laman https://myaccount.google.com/data and privacyPilih menu Data dan PrivasiCari menu Opsi LainnyaKlik Hapus Akun Google AndaIkuti petunjuk untuk menghapus akun Google Anda.</fifth>
